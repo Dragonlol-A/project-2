@@ -1,0 +1,51 @@
+\doxysection{pnm.\+h}
+\hypertarget{pnm_8h_source}{}\label{pnm_8h_source}\index{libpnm/pnm.h@{libpnm/pnm.h}}
+\mbox{\hyperlink{pnm_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ Include\ guard\ (pour\ éviter\ les\ problèmes\ d'inclusions\ multiplies}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ Bonne\ pratique:\ toujours\ encadrer\ un\ header\ avec\ un\ include\ guard}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ \_\_PNM\_\_}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ \_\_PNM\_\_}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{pnm_8h_a2c794c5c13ab4dd7e65bad031dbe41c3}{FileType}}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \mbox{\hyperlink{pnm_8h_a2c794c5c13ab4dd7e65bad031dbe41c3aa492974c4e0cabd31c624aa86b57a780}{PBM}},}
+\DoxyCodeLine{00023\ \ \ \ \mbox{\hyperlink{pnm_8h_a2c794c5c13ab4dd7e65bad031dbe41c3a053d398cdafa04fc24a9ddaba7a92bce}{PGM}},}
+\DoxyCodeLine{00024\ \ \ \ \mbox{\hyperlink{pnm_8h_a2c794c5c13ab4dd7e65bad031dbe41c3ac271a6034e77f707fe192841a95de390}{PPM}},}
+\DoxyCodeLine{00025\ \}\ \mbox{\hyperlink{pnm_8h_a2c794c5c13ab4dd7e65bad031dbe41c3}{FileType}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structPNM__t}{PNM\_t}}\ \{}
+\DoxyCodeLine{00029\ \ \ \ \mbox{\hyperlink{pnm_8h_a2c794c5c13ab4dd7e65bad031dbe41c3}{FileType}}\ \mbox{\hyperlink{structPNM__t_a6234e07460b41c2786af88996768f175}{type}};}
+\DoxyCodeLine{00030\ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structPNM__t_a07070a7d7430cfdf71874f7e68b12b46}{magic\_c}};}
+\DoxyCodeLine{00031\ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structPNM__t_afced8abad12acfbb607d3aa1297200bc}{magic\_n}};}
+\DoxyCodeLine{00032\ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structPNM__t_a5cf7d26f4a2edf31b7d50ec40169470c}{height}};}
+\DoxyCodeLine{00033\ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structPNM__t_a00cd89c7fd022f1327b61bfc51193fa5}{width}};}
+\DoxyCodeLine{00034\ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structPNM__t_a726baa6be25d78db43a7086e382f2e2c}{max\_value}};}
+\DoxyCodeLine{00035\ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ *\mbox{\hyperlink{structPNM__t_aca602bf16ab04b3bd3a49927e1235fc9}{pixel\_values}};}
+\DoxyCodeLine{00036\ \}\ \mbox{\hyperlink{pnm_8h_a5685d2cc86af79912d0d3e882e9640fd}{PNM}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structPNM__t}{PNM\_t}}\ \mbox{\hyperlink{structPNM__t}{PNM}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{pnm_8h_adf533a1bc155f9ee83d90c5a1564468f}{load\_pnm}}(\mbox{\hyperlink{structPNM__t}{PNM}}\ **image,\ \textcolor{keywordtype}{char}*\ filename);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00086\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{pnm_8h_af899a2931ee1eaa8ecb6a313710ff228}{write\_pnm}}(\mbox{\hyperlink{structPNM__t}{PNM}}\ *image,\ \textcolor{keywordtype}{char}*\ filename);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pnm_8h_aaf3f20c4794d820ff22a444edb4d2310}{freePNM}}(\mbox{\hyperlink{structPNM__t}{PNM}}\ *image);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{pnm_8h_a4a564532c7f6d14e990b661309ba6d18}{read\_header}}(FILE\ *file,\ \mbox{\hyperlink{structPNM__t}{PNM}}\ *image);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_PNM\_\_}}
+
+\end{DoxyCode}

@@ -121,7 +121,7 @@ int weird_named_function(PNM **image, char *parametre) {
             break;
          default:
          fprintf(stderr, "Invalid parameter given for \n");
-         return -5;
+         return -3; // invalid parameter
 
    }
 

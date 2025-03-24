@@ -1,0 +1,125 @@
+\doxysection{src/filter\+\_\+function.h File Reference}
+\hypertarget{filter__function_8h}{}\label{filter__function_8h}\index{src/filter\_function.h@{src/filter\_function.h}}
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include "{}pnm.\+h"{}}\newline
+Include dependency graph for filter\+\_\+function.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{filter__function_8h_a8e39fc7c8f86e2c08803ce46e18d5a8a}{monochrome}} (\mbox{\hyperlink{pnm_8h_a5685d2cc86af79912d0d3e882e9640fd}{PNM}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}image, const char \texorpdfstring{$\ast$}{*}parametre)
+\begin{DoxyCompactList}\small\item\em Converts the image to monochrome based on a specific color channel. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{filter__function_8h_a15b894ff405d346241856dcba0afaf0b}{weird\+\_\+named\+\_\+function}} (\mbox{\hyperlink{pnm_8h_a5685d2cc86af79912d0d3e882e9640fd}{PNM}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}image, char \texorpdfstring{$\ast$}{*}parametre)
+\begin{DoxyCompactList}\small\item\em Applies a custom filter to the image based on the provided parameter. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{filter__function_8h_aaaf33142f1615250bd49e7ada1c7b7a4}{negative}} (\mbox{\hyperlink{pnm_8h_a5685d2cc86af79912d0d3e882e9640fd}{PNM}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}image)
+\begin{DoxyCompactList}\small\item\em Converts the image to its negative vertion. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{filter__function_8h_a4d096b2d98913e0f7d7c824cdd898913}{upside\+\_\+down}} (\mbox{\hyperlink{pnm_8h_a5685d2cc86af79912d0d3e882e9640fd}{PNM}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}image)
+\begin{DoxyCompactList}\small\item\em Flips the image upside down. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{filter__function_8h_a8e39fc7c8f86e2c08803ce46e18d5a8a}\label{filter__function_8h_a8e39fc7c8f86e2c08803ce46e18d5a8a} 
+\index{filter\_function.h@{filter\_function.h}!monochrome@{monochrome}}
+\index{monochrome@{monochrome}!filter\_function.h@{filter\_function.h}}
+\doxysubsubsection{\texorpdfstring{monochrome()}{monochrome()}}
+{\footnotesize\ttfamily int monochrome (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pnm_8h_a5685d2cc86af79912d0d3e882e9640fd}{PNM}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{image,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{parametre }\end{DoxyParamCaption})}
+
+
+
+Converts the image to monochrome based on a specific color channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Pointer to the PNM image structure. \\
+\hline
+{\em parametre} & A string indicating the color channel ("{}r"{}, "{}v"{}, "{}b"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+image != NULL, parametre != NULL, image format is PPM. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+image format is PGM.
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+0\+: Success -\/1\+: Image is not in PPM format. -\/2\+: Invalid parameter. -\/3\+: Image is NULL. 
+\end{DoxyReturn}
+\Hypertarget{filter__function_8h_aaaf33142f1615250bd49e7ada1c7b7a4}\label{filter__function_8h_aaaf33142f1615250bd49e7ada1c7b7a4} 
+\index{filter\_function.h@{filter\_function.h}!negative@{negative}}
+\index{negative@{negative}!filter\_function.h@{filter\_function.h}}
+\doxysubsubsection{\texorpdfstring{negative()}{negative()}}
+{\footnotesize\ttfamily int negative (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pnm_8h_a5685d2cc86af79912d0d3e882e9640fd}{PNM}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{image }\end{DoxyParamCaption})}
+
+
+
+Converts the image to its negative vertion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Pointer to the PNM image structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+image != NULL 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The image is inverted (negative colors).
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+0\+: Success -\/1\+: Image is NULL. 
+\end{DoxyReturn}
+\Hypertarget{filter__function_8h_a4d096b2d98913e0f7d7c824cdd898913}\label{filter__function_8h_a4d096b2d98913e0f7d7c824cdd898913} 
+\index{filter\_function.h@{filter\_function.h}!upside\_down@{upside\_down}}
+\index{upside\_down@{upside\_down}!filter\_function.h@{filter\_function.h}}
+\doxysubsubsection{\texorpdfstring{upside\_down()}{upside\_down()}}
+{\footnotesize\ttfamily int upside\+\_\+down (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pnm_8h_a5685d2cc86af79912d0d3e882e9640fd}{PNM}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{image }\end{DoxyParamCaption})}
+
+
+
+Flips the image upside down. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Pointer to the PNM image structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+image != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The image is flipped vertically
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+0\+: Success -\/1\+: Image is NULL. 
+\end{DoxyReturn}
+\Hypertarget{filter__function_8h_a15b894ff405d346241856dcba0afaf0b}\label{filter__function_8h_a15b894ff405d346241856dcba0afaf0b} 
+\index{filter\_function.h@{filter\_function.h}!weird\_named\_function@{weird\_named\_function}}
+\index{weird\_named\_function@{weird\_named\_function}!filter\_function.h@{filter\_function.h}}
+\doxysubsubsection{\texorpdfstring{weird\_named\_function()}{weird\_named\_function()}}
+{\footnotesize\ttfamily int weird\+\_\+named\+\_\+function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pnm_8h_a5685d2cc86af79912d0d3e882e9640fd}{PNM}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{image,  }\item[{char \texorpdfstring{$\ast$}{*}}]{parametre }\end{DoxyParamCaption})}
+
+
+
+Applies a custom filter to the image based on the provided parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Pointer to the PNM image structure. \\
+\hline
+{\em parametre} & A string defining the filter behavior. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+image != NULL, parametre != NULL. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The image is modified based on the filter logic.
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+0\+: Success -\/1\+: Invalid parameter -\/2\+: Image is NULL -\/3\+: Invalid parameter -\/4\+: Memory allocation failed 
+\end{DoxyReturn}

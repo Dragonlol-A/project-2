@@ -38,5 +38,11 @@ $(OBJ_DIR)/filter_functions.o: $(SRC_DIR)/filter_functions.c
 	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
+
+doc:
+	@doxygen Doxyfile
+
 clean:
 	rm -rf $(OBJ_DIR) $(TARGET) libpnm.a pnm.o test
+
+.PHONY: all clean libpnm build doc

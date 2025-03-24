@@ -88,6 +88,7 @@ if (!strcmp(filtre, "?" )){
 if (!strcmp(filtre, "retournement" ) || !strcmp(filtre, "RETOURNEMENT")) {
     if(input_filename[IFL-3] != output_filename[OFL-3] || input_filename[IFL-2] != output_filename[OFL-2] || input_filename[IFL] != output_filename[OFL]) {
         printf("error: input and output files extentions are not matching\n");
+        freePNM(image);
         exit(EXIT_FAILURE);
     } else upside_down(&image);
 } 
@@ -100,6 +101,7 @@ else if (!strcmp(filtre, "monochrome") || !strcmp(filtre, "MONOCHROME")) {
         } 
     if(input_filename[IFL-3] != output_filename[OFL-3] || input_filename[IFL-2] != output_filename[OFL-2] || input_filename[IFL] != output_filename[OFL]) {
         printf("error: input and output files extentions are not matching\n");
+        freePNM(image);
         exit(EXIT_FAILURE);
         } else monochrome(&image, parametre);
     } 
@@ -107,16 +109,20 @@ else if (!strcmp(filtre, "monochrome") || !strcmp(filtre, "MONOCHROME")) {
 else if (!strcmp(filtre, "negatif") || !strcmp(filtre, "NEGATIF")) {
     if(input_filename[IFL-3] != output_filename[OFL-3] || input_filename[IFL-2] != output_filename[OFL-2] || input_filename[IFL] != output_filename[OFL]) {
         printf("error: input and output files extentions are not matching\n");
+        freePNM(image);
         exit(EXIT_FAILURE);
     } else negative(&image);
 
 }
 
 else if (!strcmp(filtre, "gris") || !strcmp(filtre, "GRIS")) {
-    if(output_filename[OFL-3] != 'p' || (output_filename[OFL-2] != 'g') || ( output_filename[OFL-1] != 'm')){
+    if (output_filename[OFL-3] != 'p' || (output_filename[OFL-2] != 'g') || ( output_filename[OFL-1] != 'm')){
         fprintf(stderr,"the output format must be pgm for this function\n");
+        freePNM(image);
+        exit(EXIT_FAILURE);
     }else if (weird_named_function(&image, parametre)){
         fprintf(stderr, "error while executing the function 'gris'\n");
+        freePNM(image);
         exit(EXIT_FAILURE);
     }
 } 
@@ -124,6 +130,7 @@ else if (!strcmp(filtre, "gris") || !strcmp(filtre, "GRIS")) {
 else if (!strcmp(filtre, "nb") || !strcmp(filtre, "NB")) {
     if (black_and_white(&image, parametre)!=0) {
         fprintf(stderr, "error while executing the function 'nb'\n");
+        freePNM(image);
         exit(EXIT_FAILURE);
     }
     

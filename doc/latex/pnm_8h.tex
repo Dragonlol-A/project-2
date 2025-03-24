@@ -1,0 +1,178 @@
+\doxysection{libpnm/pnm.h File Reference}
+\hypertarget{pnm_8h}{}\label{pnm_8h}\index{libpnm/pnm.h@{libpnm/pnm.h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structPNM__t}{PNM\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{pnm_8h_a2c794c5c13ab4dd7e65bad031dbe41c3}{File\+Type}} \mbox{\hyperlink{pnm_8h_a1eae3eb1a2e185ff0c628d2fa2ac9bfd}{File\+Type}}
+\item 
+typedef struct \mbox{\hyperlink{structPNM__t}{PNM\+\_\+t}} \mbox{\hyperlink{pnm_8h_a5685d2cc86af79912d0d3e882e9640fd}{PNM}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{pnm_8h_a2c794c5c13ab4dd7e65bad031dbe41c3}{File\+Type}} \{ \mbox{\hyperlink{pnm_8h_a2c794c5c13ab4dd7e65bad031dbe41c3aa492974c4e0cabd31c624aa86b57a780}{PBM}}
+, \mbox{\hyperlink{pnm_8h_a2c794c5c13ab4dd7e65bad031dbe41c3a053d398cdafa04fc24a9ddaba7a92bce}{PGM}}
+, \mbox{\hyperlink{pnm_8h_a2c794c5c13ab4dd7e65bad031dbe41c3ac271a6034e77f707fe192841a95de390}{PPM}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{pnm_8h_adf533a1bc155f9ee83d90c5a1564468f}{load\+\_\+pnm}} (\mbox{\hyperlink{pnm_8h_a5685d2cc86af79912d0d3e882e9640fd}{PNM}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}image, char \texorpdfstring{$\ast$}{*}filename)
+\item 
+int \mbox{\hyperlink{pnm_8h_af899a2931ee1eaa8ecb6a313710ff228}{write\+\_\+pnm}} (\mbox{\hyperlink{pnm_8h_a5685d2cc86af79912d0d3e882e9640fd}{PNM}} \texorpdfstring{$\ast$}{*}image, char \texorpdfstring{$\ast$}{*}filename)
+\item 
+void \mbox{\hyperlink{pnm_8h_aaf3f20c4794d820ff22a444edb4d2310}{free\+PNM}} (\mbox{\hyperlink{pnm_8h_a5685d2cc86af79912d0d3e882e9640fd}{PNM}} \texorpdfstring{$\ast$}{*}image)
+\item 
+int \mbox{\hyperlink{pnm_8h_a4a564532c7f6d14e990b661309ba6d18}{read\+\_\+header}} (FILE \texorpdfstring{$\ast$}{*}file, \mbox{\hyperlink{pnm_8h_a5685d2cc86af79912d0d3e882e9640fd}{PNM}} \texorpdfstring{$\ast$}{*}image)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{pnm_8h_a1eae3eb1a2e185ff0c628d2fa2ac9bfd}\label{pnm_8h_a1eae3eb1a2e185ff0c628d2fa2ac9bfd} 
+\index{pnm.h@{pnm.h}!FileType@{FileType}}
+\index{FileType@{FileType}!pnm.h@{pnm.h}}
+\doxysubsubsection{\texorpdfstring{FileType}{FileType}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pnm_8h_a2c794c5c13ab4dd7e65bad031dbe41c3}{File\+Type}} \mbox{\hyperlink{pnm_8h_a2c794c5c13ab4dd7e65bad031dbe41c3}{File\+Type}}}
+
+\doxylink{pnm_8h}{pnm.\+h}
+
+Ce fichier contient les déclarations de types et les prototypes des fonctions pour la manipulation d\textquotesingle{}images PNM.
+
+\begin{DoxyAuthor}{Author}
+\+: Gendebien Alexandre s2404939 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 24/02/25 @projet\+: INFO0030 Projet 1 
+\end{DoxyDate}
+\Hypertarget{pnm_8h_a5685d2cc86af79912d0d3e882e9640fd}\label{pnm_8h_a5685d2cc86af79912d0d3e882e9640fd} 
+\index{pnm.h@{pnm.h}!PNM@{PNM}}
+\index{PNM@{PNM}!pnm.h@{pnm.h}}
+\doxysubsubsection{\texorpdfstring{PNM}{PNM}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structPNM__t}{PNM\+\_\+t}} \mbox{\hyperlink{pnm_8h_a5685d2cc86af79912d0d3e882e9640fd}{PNM}}}
+
+Déclaration du type opaque PNM 
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{pnm_8h_a2c794c5c13ab4dd7e65bad031dbe41c3}\label{pnm_8h_a2c794c5c13ab4dd7e65bad031dbe41c3} 
+\index{pnm.h@{pnm.h}!FileType@{FileType}}
+\index{FileType@{FileType}!pnm.h@{pnm.h}}
+\doxysubsubsection{\texorpdfstring{FileType}{FileType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pnm_8h_a2c794c5c13ab4dd7e65bad031dbe41c3}{File\+Type}}}
+
+\doxylink{pnm_8h}{pnm.\+h}
+
+Ce fichier contient les déclarations de types et les prototypes des fonctions pour la manipulation d\textquotesingle{}images PNM.
+
+\begin{DoxyAuthor}{Author}
+\+: Gendebien Alexandre s2404939 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+\+: 24/02/25 @projet\+: INFO0030 Projet 1 
+\end{DoxyDate}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PBM@{PBM}!pnm.h@{pnm.h}}\index{pnm.h@{pnm.h}!PBM@{PBM}}}\Hypertarget{pnm_8h_a2c794c5c13ab4dd7e65bad031dbe41c3aa492974c4e0cabd31c624aa86b57a780}\label{pnm_8h_a2c794c5c13ab4dd7e65bad031dbe41c3aa492974c4e0cabd31c624aa86b57a780} 
+PBM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PGM@{PGM}!pnm.h@{pnm.h}}\index{pnm.h@{pnm.h}!PGM@{PGM}}}\Hypertarget{pnm_8h_a2c794c5c13ab4dd7e65bad031dbe41c3a053d398cdafa04fc24a9ddaba7a92bce}\label{pnm_8h_a2c794c5c13ab4dd7e65bad031dbe41c3a053d398cdafa04fc24a9ddaba7a92bce} 
+PGM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PPM@{PPM}!pnm.h@{pnm.h}}\index{pnm.h@{pnm.h}!PPM@{PPM}}}\Hypertarget{pnm_8h_a2c794c5c13ab4dd7e65bad031dbe41c3ac271a6034e77f707fe192841a95de390}\label{pnm_8h_a2c794c5c13ab4dd7e65bad031dbe41c3ac271a6034e77f707fe192841a95de390} 
+PPM&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{pnm_8h_aaf3f20c4794d820ff22a444edb4d2310}\label{pnm_8h_aaf3f20c4794d820ff22a444edb4d2310} 
+\index{pnm.h@{pnm.h}!freePNM@{freePNM}}
+\index{freePNM@{freePNM}!pnm.h@{pnm.h}}
+\doxysubsubsection{\texorpdfstring{freePNM()}{freePNM()}}
+{\footnotesize\ttfamily void free\+PNM (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pnm_8h_a5685d2cc86af79912d0d3e882e9640fd}{PNM}} \texorpdfstring{$\ast$}{*}}]{image }\end{DoxyParamCaption})}
+
+free\+\_\+pnm
+
+libére la mémoire allouée a la structure image(généralement en cas d\textquotesingle{}échec d\textquotesingle{}allocation mémorielle)
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & un pointeur sur la structure PNM\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+\+: image !=NULL 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\+: la mémoire allouée a image est libérée
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+\+: void 
+\end{DoxyReturn}
+\Hypertarget{pnm_8h_adf533a1bc155f9ee83d90c5a1564468f}\label{pnm_8h_adf533a1bc155f9ee83d90c5a1564468f} 
+\index{pnm.h@{pnm.h}!load\_pnm@{load\_pnm}}
+\index{load\_pnm@{load\_pnm}!pnm.h@{pnm.h}}
+\doxysubsubsection{\texorpdfstring{load\_pnm()}{load\_pnm()}}
+{\footnotesize\ttfamily int load\+\_\+pnm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pnm_8h_a5685d2cc86af79912d0d3e882e9640fd}{PNM}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{image,  }\item[{char \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+
+load\+\_\+pnm
+
+Charge une image PNM depuis un fichier.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & l\textquotesingle{}adresse d\textquotesingle{}un pointeur sur PNM à laquelle écrire l\textquotesingle{}adresse de l\textquotesingle{}image chargée. \\
+\hline
+{\em filename} & le chemin vers le fichier contenant l\textquotesingle{}image.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+\+: image != NULL, filename != NULL 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\+: image pointe vers l\textquotesingle{}image chargée depuis le fichier.
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+\+: 0 Succès -\/1 Erreur à l\textquotesingle{}allocation de mémoire -\/2 Nom du fichier malformé -\/3 Contenu du fichier malformé 
+\end{DoxyReturn}
+\Hypertarget{pnm_8h_a4a564532c7f6d14e990b661309ba6d18}\label{pnm_8h_a4a564532c7f6d14e990b661309ba6d18} 
+\index{pnm.h@{pnm.h}!read\_header@{read\_header}}
+\index{read\_header@{read\_header}!pnm.h@{pnm.h}}
+\doxysubsubsection{\texorpdfstring{read\_header()}{read\_header()}}
+{\footnotesize\ttfamily int read\+\_\+header (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{file,  }\item[{\mbox{\hyperlink{pnm_8h_a5685d2cc86af79912d0d3e882e9640fd}{PNM}} \texorpdfstring{$\ast$}{*}}]{image }\end{DoxyParamCaption})}
+
+\Hypertarget{pnm_8h_af899a2931ee1eaa8ecb6a313710ff228}\label{pnm_8h_af899a2931ee1eaa8ecb6a313710ff228} 
+\index{pnm.h@{pnm.h}!write\_pnm@{write\_pnm}}
+\index{write\_pnm@{write\_pnm}!pnm.h@{pnm.h}}
+\doxysubsubsection{\texorpdfstring{write\_pnm()}{write\_pnm()}}
+{\footnotesize\ttfamily int write\+\_\+pnm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pnm_8h_a5685d2cc86af79912d0d3e882e9640fd}{PNM}} \texorpdfstring{$\ast$}{*}}]{image,  }\item[{char \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+
+write\+\_\+pnm
+
+Sauvegarde une image PNM dans un fichier.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & un pointeur sur PNM. \\
+\hline
+{\em filename} & le chemin vers le fichier de destination.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+\+: image != NULL, filename != NULL 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\+: le fichier filename contient l\textquotesingle{}image PNM image.
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+\+: 0 Succès -\/1 Nom du fichier malformé -\/2 Erreur lors de la manipulation du fichier 
+\end{DoxyReturn}
