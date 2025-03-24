@@ -35,11 +35,11 @@ int upside_down(PNM **image){
    if (image == NULL || *image == NULL || (*image)->pixel_values == NULL) return -1;
 
    unsigned image_size = (*image)->width * (*image)->height;
-   fprintf(stderr, "image_size: %d\n", image_size);
+
 
     for (unsigned long i = 0; i < image_size/2; ++i) {
       unsigned long j = image_size - 1 - i;
-      if (strcmp("ppm", file_type_string((*image)->type)) == 0) {
+      if ((PPM == ((*image)->type))) {
           for (int a = 0; a < 3; ++a) {
              unsigned temp = (*image)->pixel_values[3 * i + a];
              (*image)->pixel_values[3 * i + a] = (*image)->pixel_values[3 * j + a];
@@ -58,7 +58,7 @@ int upside_down(PNM **image){
  int monochrome(PNM **image,  char *parametre) {
    if (image == NULL) return -1;
    if (parametre == NULL) return -3; // invalid parameter name or no parameter given
-   if (strcmp("ppm", file_type_string((*image)->type)) == 1) return -2 ;//wrong format
+   if (PPM != ((*image)->type)) return -2 ; //wrong format
 
    unsigned int p;
    
@@ -85,7 +85,7 @@ int upside_down(PNM **image){
 
 int negative(PNM **image) {
    if (image == NULL) return -1;
-   if (strcmp("ppm", file_type_string((*image)->type)) == 1) return -2 ;//wrong format
+   if ((PPM !=((*image)->type))) return -2 ;//wrong format
 
    unsigned long image_size = (*image)->width * (*image)->height * 3;
 
@@ -97,8 +97,7 @@ int negative(PNM **image) {
 
 int weird_named_function(PNM **image, char *parametre) {
    if (image == NULL) return -1;
-   fprintf(stderr,"%s\n ", file_type_string((*image)->type));
-   if (strcmp("ppm",file_type_string((*image)->type)) != 0) return -2 ;//wrong format
+   if ((PPM != ((*image)->type))) return -2 ;//wrong format
 
    unsigned long image_size = (*image)->width * (*image)->height;
 
@@ -117,11 +116,12 @@ int weird_named_function(PNM **image, char *parametre) {
          transformed_pixel_value[i] = (unsigned)round((r + g + b) / 3);
          break;
          case '2':
-         fprintf(stderr, "parametre: %s\n", parametre);
+
          transformed_pixel_value[i] = (unsigned)round(0.299 * r + 0.587 * g + 0.114 * b);
             break;
          default:
          fprintf(stderr, "Invalid parameter given for \n");
+         return -5;
 
    }
 
@@ -140,21 +140,15 @@ int black_and_white(PNM **image, char *parametre) {
 
    if (image == NULL) return -1;
    if (parametre == NULL) return -3; //invalid or no parameter given
-   if (file_type_string((*image)->type) =="pbm" ) return -2;// wrong format ginven
+   if ((*image)->type == PBM ) return -2;// wrong format ginven
 
    int limit;
    if (sscanf(parametre, "%d", &limit) != 1) return -3;//invalid or no parameter given
    
    if (limit < 0 || 255 < limit) return -3; //invalid or no parameter given
 
-   if (strcmp("ppm",file_type_string((*image)->type)) == 0) {
-      fprintf(stderr, "parametre: %s\n", parametre);
-      *parametre = '1';
-      char parametre_local[] = "1";
-      fprintf(stderr, "parametre: %s\n", parametre_local);
-      if (weird_named_function(image, parametre_local) != 0) return -4;
-
-      return 0;
+   if ((PPM == (*image)->type)) {
+      if (weird_named_function(image, "1") != 0) return -4;
    }
 
 

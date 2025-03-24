@@ -14,7 +14,7 @@ OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 all: $(TARGET)
 
 $(TARGET): $(OBJS) libpnm.a
-	$(CC) $^ -o $@ $(LDFLAGS)
+	$(CC) $^ -o $@ $(LDFLAGS) 
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
@@ -30,9 +30,9 @@ test: $(SRC_DIR)/filter.c $(SRC_DIR)/filter_functions.c libpnm.a
 	$(CC) $^ -o $@ $(CFLAGS) $(LDFLAGS)
 
 
-filter_test: $(SRC_DIR)/test_filters_functions.c $(OBJ_DIR)/filter_functions.o libpnm.a test/seatest.c
-	$(CC) $^ -o $@ $(CFLAGS) $(LDFLAGS)
-	./filter_test
+filter_test: test/test_filters_functions.c $(OBJ_DIR)/filter_functions.o libpnm.a test/seatest.c
+	$(CC) $^ -o $@ $(CFLAGS) $(LDFLAGS) -I test
+
 
 $(OBJ_DIR)/filter_functions.o: $(SRC_DIR)/filter_functions.c
 	@mkdir -p $(OBJ_DIR)
