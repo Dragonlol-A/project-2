@@ -43,6 +43,6 @@ doc:
 	@doxygen Doxyfile
 
 clean:
-	rm -rf $(OBJ_DIR) $(TARGET) libpnm.a pnm.o test
+	rm -rf $(OBJ_DIR) $(TARGET) libpnm.a pnm.o 
 
 .PHONY: all clean libpnm build doc
