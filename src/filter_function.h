@@ -60,3 +60,18 @@ int negative(PNM **image);
  * -1: Image is NULL.
  */
 int upside_down(PNM **image);
+
+/**
+ * @brief Converts the image to black and white image.
+ * @param image Pointer to the PNM image structure.
+ * @param parametre A string defining the threshold value.
+ * @pre image != NULL, parametre != NULL, image format is PPM or PGM.
+ * @post The image is converted to black and white (PBM format).
+ * 
+ * @return 
+ *  0: Success
+ * -1: Image is NULL.
+ * -2: Image format is not PPM or PGM.
+ * -3: Invalid parameter.
+ */
+int black_and_white(PNM **image, char *parametre);

@@ -37,9 +37,8 @@ int main(int argc, char *argv[]){
                 output_filename = optarg;
             break;
             case 'h':
-            help = "t";
             fprintf(stderr, "the program must be used like:\n\ 
-            -i input_file name -f filter_name -p parameter(*) -i output name file\n\  
+            -i input_file name -f filter_name -p parameter(*) -o output name file\n\  
             (*)filter is only used with the 'black and white' and 'monochrome' filters.\n To show the list of filters type: '-f ?'\n");
             exit(EXIT_SUCCESS);
             break;
@@ -50,9 +49,18 @@ int main(int argc, char *argv[]){
     }
 }
 
+if (!strcmp(filtre, "?" )){
+    fprintf(stderr,"the list is represented as 'what the filter do : the filter name'\n\
+        upside-down : retournement\n\
+        monochrome  : monochrome\n\
+        negative    : negatif\n\
+        grey shades : gris\n\
+        black&white : nb\n\
+        note: every filters can be written in capitals letters\n");
+        exit(EXIT_SUCCESS);
+}
 
-
-if ((input_filename == NULL || filtre == NULL || output_filename == NULL) && strcmp(help, "t")) {
+if ((input_filename == NULL || filtre == NULL || output_filename == NULL)) {
     fprintf(stderr, " Input file name, filter and output file name must be specified\n need help? use : -h\n ");
     freePNM(image);
     exit(EXIT_FAILURE);
@@ -75,15 +83,6 @@ if (load_pnm(&image, input_filename) != 0) {
     exit(EXIT_FAILURE);
 }
 
-if (!strcmp(filtre, "?" )){
-    fprintf(stderr,"the list is represented as 'filter name : how to write it as an argument'\n\
-        upside-down : retournement\n\
-        monochrome  : monochrome\n\
-        negative    : negatif\n\
-        grey shades : gris\n\
-        black&white : nb\n\
-        note: every filters can be written in capitals letters\n");
-}
 
 if (!strcmp(filtre, "retournement" ) || !strcmp(filtre, "RETOURNEMENT")) {
     if(input_filename[IFL-3] != output_filename[OFL-3] || input_filename[IFL-2] != output_filename[OFL-2] || input_filename[IFL] != output_filename[OFL]) {
