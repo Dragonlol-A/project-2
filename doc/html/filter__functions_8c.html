@@ -113,6 +113,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a15b894ff405d346241856dcba0afaf0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a custom filter to the image based on the provided parameter.  <br /></td></tr>
 <tr class="separator:a15b894ff405d346241856dcba0afaf0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88f57145200c6b24ee87898d163862a3" id="r_a88f57145200c6b24ee87898d163862a3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="filter__functions_8c.html#a88f57145200c6b24ee87898d163862a3">black_and_white</a> (<a class="el" href="pnm_8h.html#a5685d2cc86af79912d0d3e882e9640fd">PNM</a> **image, char *parametre)</td></tr>
+<tr class="memdesc:a88f57145200c6b24ee87898d163862a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the image to black and white image.  <br /></td></tr>
 <tr class="separator:a88f57145200c6b24ee87898d163862a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -141,6 +142,18 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Converts the image to black and white image. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">image</td><td>Pointer to the PNM image structure. </td></tr>
+    <tr><td class="paramname">parametre</td><td>A string defining the threshold value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Precondition</dt><dd>image != NULL, parametre != NULL, image format is PPM or PGM. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>The image is converted to black and white (PBM format).</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0: Success -1: Image is NULL. -2: Image format is not PPM or PGM. -3: Invalid parameter. </dd></dl>
 
 </div>
 </div>

@@ -29,7 +29,7 @@ int \mbox{\hyperlink{filter__functions_8c_aaaf33142f1615250bd49e7ada1c7b7a4}{neg
 int \mbox{\hyperlink{filter__functions_8c_a15b894ff405d346241856dcba0afaf0b}{weird\+\_\+named\+\_\+function}} (\mbox{\hyperlink{pnm_8h_a5685d2cc86af79912d0d3e882e9640fd}{PNM}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}image, char \texorpdfstring{$\ast$}{*}parametre)
 \begin{DoxyCompactList}\small\item\em Applies a custom filter to the image based on the provided parameter. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{filter__functions_8c_a88f57145200c6b24ee87898d163862a3}{black\+\_\+and\+\_\+white}} (\mbox{\hyperlink{pnm_8h_a5685d2cc86af79912d0d3e882e9640fd}{PNM}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}image, char \texorpdfstring{$\ast$}{*}parametre)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Converts the image to black and white image. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -39,6 +39,26 @@ int \mbox{\hyperlink{filter__functions_8c_a88f57145200c6b24ee87898d163862a3}{bla
 \doxysubsubsection{\texorpdfstring{black\_and\_white()}{black\_and\_white()}}
 {\footnotesize\ttfamily int black\+\_\+and\+\_\+white (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pnm_8h_a5685d2cc86af79912d0d3e882e9640fd}{PNM}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{image,  }\item[{char \texorpdfstring{$\ast$}{*}}]{parametre }\end{DoxyParamCaption})}
 
+
+
+Converts the image to black and white image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & Pointer to the PNM image structure. \\
+\hline
+{\em parametre} & A string defining the threshold value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+image != NULL, parametre != NULL, image format is PPM or PGM. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The image is converted to black and white (PBM format).
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+0\+: Success -\/1\+: Image is NULL. -\/2\+: Image format is not PPM or PGM. -\/3\+: Invalid parameter. 
+\end{DoxyReturn}
 \Hypertarget{filter__functions_8c_af20ff3a60a64cfc6477b1ad8039772d4}\label{filter__functions_8c_af20ff3a60a64cfc6477b1ad8039772d4} 
 \index{filter\_functions.c@{filter\_functions.c}!file\_type\_string@{file\_type\_string}}
 \index{file\_type\_string@{file\_type\_string}!filter\_functions.c@{filter\_functions.c}}

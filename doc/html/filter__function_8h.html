@@ -110,8 +110,51 @@ Functions</h2></td></tr>
 <tr class="memitem:a4d096b2d98913e0f7d7c824cdd898913" id="r_a4d096b2d98913e0f7d7c824cdd898913"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="filter__function_8h.html#a4d096b2d98913e0f7d7c824cdd898913">upside_down</a> (<a class="el" href="pnm_8h.html#a5685d2cc86af79912d0d3e882e9640fd">PNM</a> **image)</td></tr>
 <tr class="memdesc:a4d096b2d98913e0f7d7c824cdd898913"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flips the image upside down.  <br /></td></tr>
 <tr class="separator:a4d096b2d98913e0f7d7c824cdd898913"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88f57145200c6b24ee87898d163862a3" id="r_a88f57145200c6b24ee87898d163862a3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="filter__function_8h.html#a88f57145200c6b24ee87898d163862a3">black_and_white</a> (<a class="el" href="pnm_8h.html#a5685d2cc86af79912d0d3e882e9640fd">PNM</a> **image, char *parametre)</td></tr>
+<tr class="memdesc:a88f57145200c6b24ee87898d163862a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the image to black and white image.  <br /></td></tr>
+<tr class="separator:a88f57145200c6b24ee87898d163862a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a88f57145200c6b24ee87898d163862a3" name="a88f57145200c6b24ee87898d163862a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88f57145200c6b24ee87898d163862a3">&#9670;&#160;</a></span>black_and_white()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int black_and_white </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="pnm_8h.html#a5685d2cc86af79912d0d3e882e9640fd">PNM</a> **&#160;</td>
+          <td class="paramname"><em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>parametre</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Converts the image to black and white image. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">image</td><td>Pointer to the PNM image structure. </td></tr>
+    <tr><td class="paramname">parametre</td><td>A string defining the threshold value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Precondition</dt><dd>image != NULL, parametre != NULL, image format is PPM or PGM. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>The image is converted to black and white (PBM format).</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0: Success -1: Image is NULL. -2: Image format is not PPM or PGM. -3: Invalid parameter. </dd></dl>
+
+</div>
+</div>
 <a id="a8e39fc7c8f86e2c08803ce46e18d5a8a" name="a8e39fc7c8f86e2c08803ce46e18d5a8a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8e39fc7c8f86e2c08803ce46e18d5a8a">&#9670;&#160;</a></span>monochrome()</h2>
 
