@@ -21,18 +21,18 @@
 
 
 int main(int argc, char *argv[]) {
-   char *optstring = "i:o:f:";
+   char *optstring = "i:o:";
    int option;
    char *input_filename = NULL;
    char *output_filename = NULL;
-   char *format = NULL;
+   /*char *format = NULL;*/
    PNM *image = NULL;
 
    while ((option = getopt(argc, argv, optstring)) != -1) {
       switch (option) { 
-         case 'f':
-            format = optarg;
-            break;
+         //case 'f':
+           // format = optarg;
+            //break;
          case 'i':
             input_filename = optarg;
             break;
@@ -45,15 +45,15 @@ int main(int argc, char *argv[]) {
       }
    }
 
-   if (input_filename == NULL || output_filename == NULL || format == NULL) {
+   if (input_filename == NULL || output_filename == NULL /*|| format == NULL*/) {
       fprintf(stderr, "Files format, input and output files must be specified.\n");
       exit(EXIT_FAILURE);
    }
 
-   if(format[0] != 'p' || (format[1] != 'g' && format[1] !='b' && format[1] != 'p') || format[2] != 'm' ){
+   /*if(format[0] != 'p' || (format[1] != 'g' && format[1] !='b' && format[1] != 'p') || format[2] != 'm' ){
       fprintf(stderr, "Selected format unknown try: pbm or pgm or ppm\n");
       exit(EXIT_FAILURE);
-   }
+   }*/
 
    int in_filename_length = strlen(input_filename);
    int out_filename_length = strlen(output_filename);
@@ -66,10 +66,10 @@ int main(int argc, char *argv[]) {
       exit(EXIT_FAILURE);
    }
 
-   if(format[1] != input_filename[IFL-2]){
+   /*if(format[1] != input_filename[IFL-2]){
       fprintf(stderr,"error: format not matching with files format\n");
       exit(EXIT_FAILURE);
-   }
+   }*/
 
    if (load_pnm(&image, input_filename) != 0) {
       fprintf(stderr, "Failed to load PNM image from %s\n", input_filename);

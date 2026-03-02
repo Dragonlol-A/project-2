@@ -24,23 +24,6 @@ typedef enum FileType {
    PPM,
 } FileType;
 
-
-typedef struct PNM_t {
-   FileType type;
-   char magic_c;
-   unsigned int magic_n;
-   unsigned int height;
-   unsigned int width;
-   unsigned int max_value;
-   unsigned int *pixel_values;
-} PNM;
-
-
-
-/**
- * Déclaration du type opaque PNM
- *
- */
 typedef struct PNM_t PNM;
 
 
@@ -105,4 +88,5 @@ void freePNM(PNM *image);
 
 int read_header(FILE *file, PNM *image);
 
-#endif // __PNM__
+__PNM__
+#endif 

@@ -21,8 +21,15 @@
  * Définition du type opaque PNM
  *
  */
-
-
+typedef struct PNM_t {
+   FileType type;
+   char magic_c;
+   unsigned int magic_n;
+   unsigned int height;
+   unsigned int width;
+   unsigned int max_value;
+   unsigned int *pixel_values;
+} PNM;
 
 // Proto
 
