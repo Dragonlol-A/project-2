@@ -66,6 +66,11 @@ int main(int argc, char *argv[]) {
       exit(EXIT_FAILURE);
    }
 
+   if((strcmp(input_filename + IFL-3, "pgm")!= 0 && (strcmp(input_filename + IFL-3, "ppm")) != 0 && (strcmp(input_filename + IFL-3, "pbm") != 0 ))|| (input_filename[IFL-4] != '.' || output_filename[OFL-4] != '.')) {
+      printf("error: unknown file format please use: pbm, pgm or ppm\n");
+      exit(EXIT_FAILURE);
+   }
+
    /*if(format[1] != input_filename[IFL-2]){
       fprintf(stderr,"error: format not matching with files format\n");
       exit(EXIT_FAILURE);

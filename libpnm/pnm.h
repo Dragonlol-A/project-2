@@ -68,7 +68,21 @@ int load_pnm(PNM **image, char* filename);
  */
 int write_pnm(PNM *image, char* filename);
 
+/**
+ * skip_comm
+ *
+ * Ignore les commentaires dans un fichier PNM.
+ *
+ * @param file  un pointeur sur le fichier a dont il faut supprimer les commentaires.
+ *
+ * @pre: file!= NULL
+ * @post: /
+ *
+ * @return: /
+ *
+ */
 
+/*    static void skip_comm(FILE *file); */
 
 /**
  * free_pnm
@@ -85,8 +99,41 @@ int write_pnm(PNM *image, char* filename);
  */
 void freePNM(PNM *image);
 
-
+/**
+ * read_header
+ * 
+ * lit le header d'un fichier de type PNM et initialise les paramètre de l'image a lire
+ * 
+ * @param file un pointeur sur le fichier PNM a lire
+ * @param image un pointeur sur la structure PNM à remplir avec les paramètres du header
+ * 
+ * @pre: file != NULL, image != NULL
+ * @post: l'en-tête de l'image est lu depuis le fichier.
+ *
+ * @return:
+ *     0 Succès
+ *    -2 Nom du fichier malformé
+ *    -3 Contenu du fichier malformé
+ */
 int read_header(FILE *file, PNM *image);
+
+/**
+ * read_data
+ * 
+ * lit les données d'un fichier pnm et les stockes dans la struct image
+ * 
+ * @param file un pointeur sur le fichier PNM a lire
+ * @param image un pointeur sur la structure PNM servant pour passé les param du header et pour stocker les données de l'image
+ * 
+ * @pre: file != NULL, image != NULL
+ * @post: les données de l'image sont lues depuis le fichier
+ *
+ * @return:
+ *     0 Succès
+ *    -1 malformation du fichier ppm
+ *    -2 malformation au niveau des valeurs des pixels
+ */
+/**     static int read_data(FILE *file, PNM *image); */
 
 __PNM__
 #endif 

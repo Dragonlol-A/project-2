@@ -187,6 +187,9 @@ int load_pnm(PNM **image, char *filename) {
 
 int write_pnm(PNM *image, char* filename){
    FILE *file = fopen(filename, "w");
+   if (file == NULL){
+      return -1;
+   }
    unsigned int i = 0;
    
   
@@ -195,12 +198,18 @@ int write_pnm(PNM *image, char* filename){
    if (image->type!=PBM)
       fprintf(file, "%u\n", image->max_value);
    
-   while (i<(image->height*image->width*3))
+   unsigned int total_pixels = image->height * image->width;
+   if (image->type == PPM) {
+      total_pixels *= 3;
+   }
+   
+   while (i < total_pixels)
    {  
       fprintf(file,"%u ", image->pixel_values[i]);
       ++i;    
    }
-   
+   fclose(file);
+   freePNM(image);
 
    return 0;
 }
